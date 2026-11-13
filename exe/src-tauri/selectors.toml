@@ -1,0 +1,92 @@
+# 各平台编辑器关键选择器（占位，需按真实 DOM 校准）
+# 修改此文件后重启即可生效，无需重新编译。
+# captcha        : 触发验证码时的遮罩/弹层选择器（命中即转人工接管）
+# schedule_toggle: "定时"开关按钮；schedule_time: 时间输入框
+# profile_nickname / profile_niche: 可选，账号资料页的昵称与领域选择器。
+#   留空时按常见 class、data-testid 及页面文案启发式提取；抓不到领域会请用户手工填写。
+#   按真实平台后台 DOM 校准后填入对应表的这两个键即可，无需重新编译。
+# 本地校准可用 exe/mock/editor.html 对照抓取真实选择器。
+
+[wechat]
+url = "https://mp.weixin.qq.com/"
+title = "#title"
+body = "iframe.editor"
+cover_btn = "#coverBtn"
+cover_input = "#coverInput"
+cover_confirm = "#coverConfirm"
+tags = "#tags"
+publish = "#publishBtn"
+captcha = "#captcha"
+schedule_toggle = "#scheduleToggle"
+schedule_time = "#scheduleTime"
+schedule_confirm = "#scheduleConfirm"
+
+[toutiao]
+url = "https://mp.toutiao.com/"
+title = "#title"
+body = "#editor"
+cover_btn = "#coverBtn"
+cover_input = "#coverInput"
+cover_confirm = "#coverConfirm"
+tags = "#tags"
+publish = "#publishBtn"
+captcha = "#captcha"
+schedule_toggle = "#scheduleToggle"
+schedule_time = "#scheduleTime"
+schedule_confirm = "#scheduleConfirm"
+
+[zhihu]
+url = "https://www.zhihu.com/"
+title = "#Title"
+body = "#root"
+cover_btn = "#coverBtn"
+cover_input = "#coverInput"
+cover_confirm = "#coverConfirm"
+tags = "#tags"
+publish = "#publishBtn"
+captcha = "#captcha"
+schedule_toggle = "#scheduleToggle"
+schedule_time = "#scheduleTime"
+schedule_confirm = "#scheduleConfirm"
+
+[xiaohongshu]
+url = "https://creator.xiaohongshu.com/"
+title = "#title"
+body = "#content"
+cover_btn = "#coverBtn"
+cover_input = "#coverInput"
+cover_confirm = "#coverConfirm"
+tags = "#tags"
+publish = "#publishBtn"
+captcha = "#captcha"
+schedule_toggle = "#scheduleToggle"
+schedule_time = "#scheduleTime"
+schedule_confirm = "#scheduleConfirm"
+
+[baijiahao]
+url = "https://baijiahao.baidu.com/"
+title = "#title"
+body = "#editor"
+cover_btn = "#coverBtn"
+cover_input = "#coverInput"
+cover_confirm = "#coverConfirm"
+tags = "#tags"
+publish = "#publishBtn"
+captcha = "#captcha"
+schedule_toggle = "#scheduleToggle"
+schedule_time = "#scheduleTime"
+schedule_confirm = "#scheduleConfirm"
+
+[weibo]
+url = "https://weibo.com/"
+title = "#title"
+body = "#editor"
+cover_btn = "#coverBtn"
+cover_input = "#coverInput"
+cover_confirm = "#coverConfirm"
+tags = "#tags"
+publish = "#publishBtn"
+captcha = "#captcha"
+schedule_toggle = "#scheduleToggle"
+schedule_time = "#scheduleTime"
+schedule_confirm = "#scheduleConfirm"

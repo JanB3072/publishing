@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8" />
+  <title>Mock 发布编辑器（用于本地校准选择器 / 端到端自测）</title>
+  <style>
+    body { font-family: sans-serif; padding: 24px; max-width: 640px; }
+    input, textarea, iframe { width: 100%; margin: 6px 0 14px; }
+    .row { display: flex; gap: 8px; align-items: center; }
+    button { padding: 8px 14px; }
+    #status { margin-top: 16px; font-weight: bold; color: #0a0; min-height: 24px; }
+    #captcha { display: none; border: 2px solid #c33; padding: 12px; margin: 12px 0; }
+    .hidden { display: none !important; }
+  </style>
+</head>
+<body>
+  <h2>Mock 编辑器</h2>
+  <p>元素 id 与 selectors.toml 默认一致。打开本页，按 F12 核对/复制真实平台的选择器填回 selectors.toml。</p>
+
+  <label>标题 #title</label>
+  <input id="title" />
+
+  <label>正文（可编辑区 #editor）</label>
+  <div id="editor" contenteditable="true" style="min-height:120px;border:1px solid #ccc;padding:8px;"></div>
+
+  <div class="row">
+    <button id="coverBtn">上传封面</button>
+    <input id="coverInput" type="file" class="hidden" />
+    <button id="coverConfirm">确认封面</button>
+  </div>
+
+  <label>标签 #tags</label>
+  <input id="tags" />
+
+  <div class="row">
+    <button id="scheduleToggle">定时发布</button>
+    <input id="scheduleTime" placeholder="YYYY-MM-DD HH:MM" />
+    <button id="scheduleConfirm">确认定时</button>
+  </div>
+
+  <button id="publishBtn">发布</button>
+
+  <p><button id="captchaSolve">模拟出现验证码（注入 #captcha）</button></p>
+
+  <div id="status"></div>
+
+  <script>
+    // 正常发布：直接标记已发布（自测断言 #status == "published"）
+    document.getElementById('publishBtn').addEventListener('click', () => {
+      if (document.getElementById('captcha')) return; // 验证码未过，不发布
+      document.getElementById('status').textContent = 'published';
+    });
+    // 模拟出现验证码：动态注入 #captcha 元素，使适配器 detect 到并转人工
+    document.getElementById('captchaSolve').addEventListener('click', () => {
+      if (!document.getElementById('captcha')) {
+        var d = document.createElement('div');
+        d.id = 'captcha';
+        d.textContent = '验证码出现';
+        document.body.appendChild(d);
+      }
+    });
+  </script>
+</body>
+</html>

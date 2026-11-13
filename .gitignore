@@ -1,0 +1,39 @@
+# 依赖
+node_modules/
+
+# 本地环境配置（含数据库密码等，禁止提交）
+.env
+
+# 日志
+*.log
+npm-debug.log*
+
+# 系统/编辑器
+.DS_Store
+Thumbs.db
+
+# 本地诊断/构建临时产物
+dev.out.txt
+dev.err.txt
+tail.out.txt
+tail.err.txt
+*.out.txt
+*.err.txt
+
+# wrangler 本地构建/运行状态（含本地 D1 数据）
+.wrangler/
+*.snapshots
+.snapshots/
+
+# 运行时数据：Cookie / 浏览器登录态 / License / 设备信息（含敏感信息，禁止提交）
+db.json
+*.db
+*.sqlite
+*.sqlite3
+profiles/
+
+# 构建产物：Rust target、前端 dist、Tauri 安装包与验证日志
+target/
+dist/
+*.err
+

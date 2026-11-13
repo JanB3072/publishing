@@ -1,0 +1,30 @@
+[package]
+name = "publishing-exe"
+version = "0.1.0"
+description = "多平台文章同步发布工具"
+edition = "2021"
+rust-version = "1.77"
+
+[lib]
+name = "publishing_exe_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = [] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+reqwest = { version = "0.12", features = ["json"] }
+tokio = { version = "1", features = ["full"] }
+rusqlite = { version = "0.31", features = ["bundled"] }
+tokio-tungstenite = { version = "0.24", default-features = false, features = ["connect"] }
+futures-util = "0.3"
+async-trait = "0.1"
+anyhow = "1"
+aes-gcm = "0.10"
+base64 = "0.22"
+toml = "0.8"
+chrono = "0.4"
+tauri-plugin-dialog = "2"
